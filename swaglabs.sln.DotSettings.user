@@ -1,0 +1,16 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/Hierarchy/Build/BuildTool/CustomBuildToolPath/@EntryValue">C:\Users\00723458\.dotnet\sdk\9.0.304\MSBuild.dll</s:String>
+	<s:Int64 x:Key="/Default/Environment/Hierarchy/Build/BuildTool/MsbuildVersion/@EntryValue">1114126</s:Int64>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=65ff656b_002D1808_002D4199_002D92b0_002Dde1a7701b77e/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="DeleteToCartTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::BE748311-91F1-452B-8143-DBE316CA78A3::net9.0::swaglabs.Tests.CartTests.DeleteToCartTest&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::BE748311-91F1-452B-8143-DBE316CA78A3::net9.0::swaglabs.Tests.LoginTests.LogoutTest&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::BE748311-91F1-452B-8143-DBE316CA78A3::net9.0::swaglabs.Tests.LoginTests.LoginSuccesTest&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	
+	
+	
+	
+	
+	</wpf:ResourceDictionary>
