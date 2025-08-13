@@ -17,10 +17,27 @@ jobs:
         uses: actions/setup-dotnet@v4
         with: 
           dotnet-version: '9.0.x'
+          
+      - name: Install Chrome
+        uses: browser-actions/setup-chrome@v1
+        with: 
+          chrome-version: 'latest'
+      
+      - name: Make ChromeDriver executable
+        run: chmod +x ~/.dotnet/tools/chromedriver
+      
+      - name: Install Selenium WebDriver
+        run: dotnet tool install --global Selenium.WebDriver.ChromeDriver
         
       - name: Restore dependencies
         run: dotnet restore
+      
+      - name: Build
+        run: dotnet build --no-restore --configuration Release
         
+      - name: Add .NET tools to PATH
+        run: echo "$HOME/.dotnet/tools" >> $GITHUB_PATH
+      
       - name: Step 1 - Login
         run: dotnet test --filter TestCategory=Step1 --logger "trx;LogFileName=Step1.trx"
 
