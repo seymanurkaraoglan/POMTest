@@ -2,6 +2,8 @@ using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using swaglabs.Pages;
+using WebDriverManager;
+using WebDriverManager.DriverConfigs.Impl;
 
 namespace swaglabs.Utils;
 
@@ -20,13 +22,14 @@ public class TestBase
     [SetUp]
     public void SetUp()
     {
-        var driverPath = Environment.GetEnvironmentVariable("HOME") + "./dotnet/tools";
+        new DriverManager().SetUpDriver(new ChromeConfig());
+        //var driverPath = Environment.GetEnvironmentVariable("HOME") + "./dotnet/tools";
         var options = new ChromeOptions();
         options.AddArgument("--headless");
         options.AddArgument("--no-sandbox");
         options.AddArgument("--disable-dev-shm-usage");
-        options.BinaryLocation = "/usr/bin/google-chrome";
-        driver = new ChromeDriver(driverPath, options);
+        //options.BinaryLocation = "/usr/bin/google-chrome";
+        driver = new ChromeDriver(options);
         //driver = new ChromeDriver();
         
         driver.Manage().Window.Maximize();
