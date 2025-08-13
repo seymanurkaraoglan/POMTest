@@ -17,19 +17,7 @@ jobs:
         uses: actions/setup-dotnet@v4
         with: 
           dotnet-version: '9.0.x'
-          
-      - name: Install Chrome
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y wget unzip
-          wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-          sudo apt-install -y ./google-chrome-stable_current_amd64.deb
       
-      - name: Make ChromeDriver executable
-        run: chmod +x ~/.dotnet/tools/chromedriver
-      
-      - name: Install Selenium WebDriver
-        run: dotnet tool install --global Selenium.WebDriver.ChromeDriver
         
       - name: Restore dependencies
         run: dotnet restore
@@ -37,8 +25,7 @@ jobs:
       - name: Build
         run: dotnet build --no-restore --configuration Release
         
-      - name: Add .NET tools to PATH
-        run: echo "$HOME/.dotnet/tools" >> $GITHUB_PATH
+      
       
       - name: Step 1 - Login
         run: dotnet test --filter TestCategory=Step1 --logger "trx;LogFileName=Step1.trx"
