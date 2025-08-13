@@ -13,15 +13,16 @@ public class CartTests : TestBase
     [Test,Category("Step3")]
     public void DeleteToCartTest()
     {
-        loginPage.login(username, password);
+        //loginPage.login(username, password);
         //productsPage.addToCart("Sauce Labs Fleece Jacket");
+        Thread.Sleep(2000);
         int countbefore = productsPage.IsProductAddedToCart();
-        Thread.Sleep(5000);
+        Thread.Sleep(2000);
         
         
         cartPage.goToCart();
         cartPage.deleteToCart("Sauce Labs Fleece Jacket");
-        Thread.Sleep(5000);
+        Thread.Sleep(2000);
         int countafter = productsPage.IsProductAddedToCart();
         Assert.That(countafter, Is.LessThan(countbefore));
         
