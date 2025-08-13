@@ -1,0 +1,43 @@
+name: Run Tests 
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+jobs: 
+  ordered-tests:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v4
+        
+      - name: Setup .NET 
+        uses: actions/setup-dotnet@v4
+        with: 
+          dotnet-version: '9.0.x'
+        
+      - name: Restore dependencies
+        run: dotnet restore
+        
+      - name: Step 1 - Login
+        run: dotnet test --filter TestCategory=Step1 --logger "trx;LogFileName=Step1.trx"
+
+      - name: Step 2 - AddToCart
+        run: dotnet test --filter TestCategory=Step2 --logger "trx;LogFileName=Step2.trx"
+
+      - name: Step 3 - DeleteCart
+        run: dotnet test --filter TestCategory=Step3 --logger "trx;LogFileName=Step3.trx"
+        
+      - name: Step 4 - Checkout
+        run: dotnet test --filter TestCategory=Step4 --logger "trx;LogFileName=Step4.trx"
+        
+      - name: Step 5 - Logout
+        run: dotnet test --filter TestCategory=Step5 --logger "trx;LogFileName=Step5.trx"
+        
+      - name: Upload Test Results
+        uses: actions/upload-artifact@v4
+        with: 
+          name: TestResults
+          path: '**/*.trx'
