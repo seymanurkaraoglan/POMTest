@@ -20,7 +20,13 @@ public class TestBase
     [SetUp]
     public void SetUp()
     {
-        driver = new ChromeDriver();
+        var options = new ChromeOptions();
+        options.AddArgument("--headless");
+        options.AddArgument("--no-sandbox");
+        options.AddArgument("--disable-dev-shm-usage");
+        driver = new ChromeDriver(options);
+        //driver = new ChromeDriver();
+        
         driver.Manage().Window.Maximize();
         driver.Navigate().GoToUrl("https://www.saucedemo.com/v1/");
         basePage = new BasePage();
