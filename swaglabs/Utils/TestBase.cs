@@ -25,6 +25,7 @@ public class TestBase
         options.AddArgument("--headless");
         options.AddArgument("--no-sandbox");
         options.AddArgument("--disable-dev-shm-usage");
+        options.BinaryLocation = "/usr/bin/google-chrome";
         driver = new ChromeDriver(driverPath, options);
         //driver = new ChromeDriver();
         

@@ -19,9 +19,11 @@ jobs:
           dotnet-version: '9.0.x'
           
       - name: Install Chrome
-        uses: browser-actions/setup-chrome@v1
-        with: 
-          chrome-version: 'latest'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y wget unzip
+          wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+          sudo apt-install -y ./google-chrome-stable_current_amd64.deb
       
       - name: Make ChromeDriver executable
         run: chmod +x ~/.dotnet/tools/chromedriver
