@@ -13,8 +13,8 @@ public class CartTests : TestBase
     [Test,Category("Step3")]
     public void DeleteToCartTest()
     {
-        //loginPage.login(username, password);
-        //productsPage.addToCart("Sauce Labs Fleece Jacket");
+        loginPage.login(username, password);
+        productsPage.addToCart("Sauce Labs Fleece Jacket");
         Thread.Sleep(2000);
         int countbefore = productsPage.IsProductAddedToCart();
         Thread.Sleep(2000);

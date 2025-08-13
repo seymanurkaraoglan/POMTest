@@ -28,7 +28,7 @@ public class LoginTests : TestBase
     [Test,Category("Step5")]
     public void LogoutTest()
     {
-        //loginPage.login("standard_user","secret_sauce");
+        loginPage.login("standard_user","secret_sauce");
         loginPage.logout();
         Assert.That(loginPage.isLoginFormPresent(), Is.True);
     }

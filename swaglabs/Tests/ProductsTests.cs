@@ -13,7 +13,7 @@ public class ProductsTests : TestBase
     [Test,Category("Step2")]
     public void addToCartTest()
     {
-        //loginPage.login(username,password);
+        loginPage.login(username,password);
         int countbefore = productsPage.IsProductAddedToCart();
         productsPage.addToCart("Sauce Labs Fleece Jacket", "Sauce Labs Onesie");
         Thread.Sleep(2000);
