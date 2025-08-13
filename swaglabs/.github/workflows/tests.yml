@@ -32,6 +32,9 @@ jobs:
       - name: Build
         run: dotnet build --no-restore --configuration Release
         
+      - name: Add .NET tools to PATH
+        run: echo "$HOME/.dotnet/tools" >> $GITHUB_PATH
+      
       - name: Step 1 - Login
         run: dotnet test --filter TestCategory=Step1 --logger "trx;LogFileName=Step1.trx"
 
