@@ -22,4 +22,8 @@
     <Using Include="NUnit.Framework" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Include=".github\workflows\tests.yml" />
+  </ItemGroup>
+
 </Project>
