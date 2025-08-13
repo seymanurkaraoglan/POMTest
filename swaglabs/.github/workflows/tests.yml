@@ -23,6 +23,9 @@ jobs:
         with: 
           chrome-version: 'latest'
       
+      - name: Make ChromeDriver executable
+        run: chmod +x ~/.dotnet/tools/chromedriver
+      
       - name: Install Selenium WebDriver
         run: dotnet tool install --global Selenium.WebDriver.ChromeDriver
         
